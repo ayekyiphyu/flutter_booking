@@ -64,7 +64,9 @@ class HomeScreen extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor:
-                            Colors.red.shade900, // Custom background color
+                            Colors
+                                .lightBlue
+                                .shade900, // Custom background color
                         foregroundColor: Colors.white, // White text color
                         shape: RoundedRectangleBorder(
                           borderRadius:
@@ -96,7 +98,7 @@ class HomeScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const CalendarScreen(),
+                            builder: (context) => CalendarScreen(),
                           ),
                         );
                       },
