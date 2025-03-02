@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yoyaku_app/src/screens/calender_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,8 +8,12 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.book_outlined, color: Colors.white),
+          onPressed: () {},
+        ),
         title: const Text(
-          'réservation facile',
+          'Easy Booking App',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.blue, // Change the app bar color
@@ -43,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor:
                             Colors
-                                .lightBlue
+                                .lightGreen
                                 .shade900, // Custom background color
                         foregroundColor: Colors.white, // White text color
                         shape: RoundedRectangleBorder(
@@ -55,7 +60,22 @@ class HomeScreen extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        // Add calendar navigation action here
+                        // Your action for 'Detail Page' here
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            Colors.red.shade900, // Custom background color
+                        foregroundColor: Colors.white, // White text color
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.zero, // Remove border radius
+                        ),
+                      ),
+                      child: const Text('一覧表示'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Your action for 'Two Button' here
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor:
@@ -68,7 +88,30 @@ class HomeScreen extends StatelessWidget {
                               BorderRadius.zero, // Remove border radius
                         ),
                       ),
-                      child: const Text('カレンダーを表示'),
+                      child: const Text('お問い合せ'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Navigate to CalendarScreen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const CalendarScreen(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            Colors
+                                .lightBlue
+                                .shade900, // Custom background color
+                        foregroundColor: Colors.white, // White text color
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.zero, // Remove border radius
+                        ),
+                      ),
+                      child: const Text('カレンダー表示'),
                     ),
                   ],
                 ),
